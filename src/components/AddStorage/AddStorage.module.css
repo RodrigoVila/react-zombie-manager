@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.innerContainer {
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.text {
+  font-size: 1.2rem;
+}
+
+.input {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.image {
+  height: 150px;
+  width: 100px;
+}
+
+.mirrorImage {
+  transform: scaleX(-1);
+}

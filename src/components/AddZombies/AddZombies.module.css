@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  font-size: 25px;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 70px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 2px solid black;
+  padding: 5px 0;
+}
+
+.text {
+  margin: 0 10px;
+}
+
+.select {
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+.button {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: lightblue;
+}
