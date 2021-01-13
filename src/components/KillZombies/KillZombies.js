@@ -3,9 +3,10 @@ import { AppContext } from "../../context/context";
 import Button from "../Button/Button";
 import styles from "./KillZombies.module.css";
 
-const KillZombie = ({ location, toggleModal }) => {
+const KillZombie = ({ currentLocation, toggleModal }) => {
   const [state, setState] = useContext(AppContext);
   const [count, setCount] = useState(0);
+  const [error, setError] = useState(false);
 
   const handleCount = (e) => {
     const value = e.target.value;
@@ -15,28 +16,37 @@ const KillZombie = ({ location, toggleModal }) => {
 
   const handleKill = () => {
     var newData = state.map((elem) => {
-      if (elem.name === location && elem.zombieCount >= count)
+      if (elem.location === currentLocation && elem.zombieCount >= count) {
+        toggleModal();
         return Object.assign({}, elem, {
           zombieCount: elem.zombieCount - count,
         });
-      return elem;
+      } else {
+        setError(true);
+        return elem;
+      }
     });
-
     setState(newData);
-    toggleModal();
   };
 
   return (
-    <>
-      <p className={styles.text}>How many Zombies would you want to kill?</p>
-      <input
-        className={styles.input}
-        type="number"
-        value={count}
-        onChange={handleCount}
-      />
-      <Button label="KILL!" color="red" handleClick={handleKill} />
-    </>
+    <div className={styles.container}>
+      <div className={styles.innerContainer}>
+        <p className={styles.text}>How many Zombies would you want to kill?</p>
+        <input
+          className={styles.input}
+          type="number"
+          value={count}
+          onChange={handleCount}
+        />
+        <Button label="KILL!" color="red" handleClick={handleKill} />
+      </div>
+      {error && (
+        <p className={styles.error}>
+          You can't kill more zombies than you have in your current location
+        </p>
+      )}
+    </div>
   );
 };
 

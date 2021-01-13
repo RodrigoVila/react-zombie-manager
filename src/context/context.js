@@ -2,15 +2,15 @@ import { useState, useEffect, createContext } from "react";
 
 const initialState = [
   {
-    name: "Hospital",
+    location: "Hospital",
     zombieCount: 0,
   },
   {
-    name: "School",
+    location: "School",
     zombieCount: 0,
   },
   {
-    name: "Warehouse",
+    location: "Warehouse",
     zombieCount: 0,
   },
 ];

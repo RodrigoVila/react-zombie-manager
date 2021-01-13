@@ -5,7 +5,7 @@ import Modal from "../Modal/Modal";
 import MoveZombies from "../MoveZombies/MoveZombies";
 import KillZombies from "../KillZombies/KillZombies";
 
-const Location = ({ name, count, setState }) => {
+const Location = ({ location, count }) => {
   const [isModalShown, setModalShown] = useState(false);
   const [isMove, setMove] = useState(false);
 
@@ -23,7 +23,7 @@ const Location = ({ name, count, setState }) => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>{name}</p>
+      <p className={styles.title}>{location}</p>
       <p className={styles.zombieQty}>{count}</p>
       <p className={styles.zombiesStored}>
         {count === 1 ? "Zombie" : "Zombies"}
@@ -34,12 +34,12 @@ const Location = ({ name, count, setState }) => {
       </div>
       {isModalShown && isMove && (
         <Modal toggleModal={toggleModal}>
-          <MoveZombies location={name} toggleModal={toggleModal} />
+          <MoveZombies currentLocation={location} toggleModal={toggleModal} />
         </Modal>
       )}
       {isModalShown && !isMove && (
         <Modal toggleModal={toggleModal}>
-          <KillZombies location={name} toggleModal={toggleModal} />
+          <KillZombies currentLocation={location} toggleModal={toggleModal} />
         </Modal>
       )}
     </div>

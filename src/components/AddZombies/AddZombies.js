@@ -6,7 +6,7 @@ import styles from "./AddZombies.module.css";
 const AddZombies = () => {
   const [state, setState] = useContext(AppContext);
   const [count, setCount] = useState(0);
-  const [area, setArea] = useState("Hospital");
+  const [location, setLocation] = useState("Hospital");
 
   const handleCount = (e) => {
     const value = e.target.value;
@@ -15,12 +15,12 @@ const AddZombies = () => {
   };
 
   const handleSelect = (e) => {
-    setArea(e.target.value);
+    setLocation(e.target.value);
   };
 
   const handleAdd = () => {
     var newData = state.map((elem) => {
-      if (elem.name === area)
+      if (elem.location === location)
         return Object.assign({}, elem, {
           zombieCount: elem.zombieCount + count,
         });
@@ -45,8 +45,8 @@ const AddZombies = () => {
       <>
         <select className={styles.select} onChange={handleSelect}>
           {state.map((option) => (
-            <option key={option.name} value={option.name}>
-              {option.name}
+            <option key={option.location} value={option.location}>
+              {option.location}
             </option>
           ))}
         </select>

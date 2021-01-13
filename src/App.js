@@ -6,19 +6,18 @@ import AddStorage from "./components/AddStorage/AddStorage";
 import styles from "./App.module.css";
 
 function App() {
-  const [state, setState] = useContext(AppContext);
+  const [state] = useContext(AppContext);
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Zombie Manager</h1>
       <AddZombies />
       <div className={styles.cards}>
-        {state.map((location) => (
+        {state.map((storage) => (
           <Location
-            key={location.name}
-            name={location.name}
-            count={location.zombieCount}
-            setState={setState}
+            key={storage.location}
+            location={storage.location}
+            count={storage.zombieCount}
           />
         ))}
       </div>

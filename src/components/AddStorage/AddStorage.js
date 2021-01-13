@@ -6,14 +6,14 @@ import image from "../../assets/zombie.png";
 
 const AddStorage = () => {
   const [state, setState] = useContext(AppContext);
-  const [area, setArea] = useState("");
+  const [newLocation, setNewLocation] = useState("");
 
   const addStorage = () => {
-    if (area === "") return;
-    setState([...state, { name: area, zombieCount: 0 }]);
-    setArea("");
+    if (newLocation === "") return;
+    setState([...state, { location: newLocation, zombieCount: 0 }]);
+    setNewLocation("");
   };
-
+  console.log("nl",newLocation);
   return (
     <div className={styles.container}>
       <img className={styles.image} src={image} alt="Zombie" />
@@ -26,8 +26,8 @@ const AddStorage = () => {
           <input
             className={styles.input}
             type="text"
-            value={area}
-            onChange={(e) => setArea(e.target.value)}
+            value={newLocation}
+            onChange={(e) => setNewLocation(e.target.value)}
           />
           <Button
             label="ADD!"
