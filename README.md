@@ -19,10 +19,9 @@ _I used React (CRA) for the front end. No back end was used in this app._
 
 ### Why did I make some decisions? 📋
 
-_We need the app to keep track of where each zombie is being held_
-I had 2 ideas in mind: To create a single object for each new zombie and store it in its corresponding array(storage) or just keep track of how many zombies we have and move them around freely.
-I chose the second one as they are usually a lot and if you kill one, you are not going to say "Oh hey! are you ID ig2x92sxd??" NO! you just kill the motherf.. you don't care about it's ID, but if I had chosen the first option, then each storage would have been an array which would have mapped each zombie inside. To move or delete specific ones, I would have used it's ID.
-
+When I read: _"We need the app to keep track of where each zombie is being held"_
+I understood that we need to move numbers of zombies between storages, but perhaps what we need was an object containing each zombie with its corresponding ID. In that case I would create an array for each storage and push each zombie into it. In case we need to move or kill it, I would have identified him with his ID to perform the "Update" or "Delete" operation.
+Another idea was to use an array of IDs, instead of objects.
 ### Extras 👑
 
 * Context is stored in localstorage to persist data

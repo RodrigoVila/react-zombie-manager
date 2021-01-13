@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import Button from "../Button/Button";
 import styles from "./MoveZombies.module.css";
 import { AppContext } from "../../context/context";
@@ -19,8 +19,10 @@ const MoveZombies = ({ location, toggleModal }) => {
   };
 
   const handleMove = () => {
+    if (!area) return;
     var newData = state.map((elem) => {
-      if (count > elem.zombieCount || area === "") return elem;
+      //TODO: Leaving next line, when I move zombies, no subtraction is made to current storage. But if I remove it, there it will be negative numbers
+      if (count > elem.zombieCount) return elem;
       if (elem.name === area)
         return Object.assign({}, elem, {
           zombieCount: elem.zombieCount + count,
