@@ -11,7 +11,7 @@ _App made for a technical interview_
 
 ## What is it about 📦
 
-_The idea was to build a project management app. You can add, move or delete Zombies between different quarantine storages_
+_The idea was to build a project management app. You can add, move or delete Zombies between different quarantine locations_
 
 ### Front and Back end 🔧
 
