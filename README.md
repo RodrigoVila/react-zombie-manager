@@ -1,6 +1,8 @@
 # React Zombie Manager ⚛️ 
 
-_App made for a technical interview_
+## What is it about 📦
+
+_The idea was to build a project management app. You can add, move or delete Zombies between different quarantine locations_
 
 ## How to run 🚀
 
@@ -8,10 +10,6 @@ _App made for a technical interview_
 * Go to project folder
 * Install dependencies `npm install`. 
 * Run project `npm start`
-
-## What is it about 📦
-
-_The idea was to build a project management app. You can add, move or delete Zombies between different quarantine locations_
 
 ### Front and Back end 🔧
 
